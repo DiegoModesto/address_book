@@ -7,6 +7,8 @@ defmodule AddressBook.Account.User do
     field :email, :string
     field :telefone, :string
 
+    has_many :addresses, AddressBook.Account.Address
+
     timestamps(type: :utc_datetime)
   end
 

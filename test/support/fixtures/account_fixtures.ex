@@ -24,4 +24,21 @@ defmodule AddressBook.AccountFixtures do
 
     user
   end
+
+  @doc """
+  Generate a address.
+  """
+  def address_fixture(attrs \\ %{}) do
+    {:ok, address} =
+      attrs
+      |> Enum.into(%{
+        cep: "some cep",
+        city: "some city",
+        state: "some state",
+        stree: "some stree"
+      })
+      |> AddressBook.Account.create_address()
+
+    address
+  end
 end
