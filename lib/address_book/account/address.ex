@@ -4,9 +4,9 @@ defmodule AddressBook.Account.Address do
 
   schema "address" do
     field :state, :string
-    field :stree, :string
+    field :street, :string
     field :city, :string
-    field :cep, :string
+    field :zipcode, :string
 
     belongs_to :user, AddressBook.Account.User
 
@@ -16,7 +16,7 @@ defmodule AddressBook.Account.Address do
   @doc false
   def changeset(address, attrs) do
     address
-    |> cast(attrs, [:stree, :city, :state, :cep])
-    |> validate_required([:stree, :city, :state, :cep])
+    |> cast(attrs, [:street, :city, :state, :zipcode, :user_id])
+    |> validate_required([:street, :city, :state, :zipcode, :user_id])
   end
 end

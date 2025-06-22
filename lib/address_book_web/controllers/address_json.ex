@@ -18,10 +18,10 @@ defmodule AddressBookWeb.AddressJSON do
   defp data(%Address{} = address) do
     %{
       id: address.id,
-      stree: address.stree,
+      street: address.street,
       city: address.city,
       state: address.state,
-      cep: address.cep
+      zipcode: address.zipcode
     }
   end
 end

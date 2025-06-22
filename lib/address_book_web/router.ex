@@ -9,6 +9,7 @@ defmodule AddressBookWeb.Router do
     pipe_through :api
 
     resources "/users", UserController, except: [:new, :edit]
+    resources "/address", AddressController, except: [:new, :edit]
   end
 
   if Application.compile_env(:address_book, :dev_routes) do
